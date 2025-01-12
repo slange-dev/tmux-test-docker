@@ -7,7 +7,8 @@ A small framework for isolated testing of tmux plugins.
 Isolation is achieved by
 running the tests in `Docker`.
 
-Dependencies: 
+Dependencies:
+
 - `Docker`
 
 ### Setup
@@ -65,8 +66,6 @@ It's a `bash` script but it can be any executable also `expect`, `ruby`, `python
 
 - create a `tests/test_example.sh` file with the following content:
 
-
-
 ```bash
 #/usr/bin/env bash
 
@@ -105,14 +104,13 @@ Check out more example test scripts in this project's [tests/](tests/) directory
 
 GitHub workflow, comming soon...
 
-
 ### Notes
 
 - The `tests/` directory for tests and `lib/tmux-test-docker/` for cloning `tmux-test-docker`
   into cannot be changed currently
 - Don't run `tests/run_tests_in_isolation` script on your local development
   environment. That's an internal test runner meant to be executed in an
-  isolated environment like `Docker`.<br/>
+  isolated environment like `Docker`.
   Use `./run_tests` script.
 
 ### Running `tmux-test-docker` framework tests
