@@ -112,7 +112,7 @@ GitHub workflow, comming soon...
   into cannot be changed currently
 - Don't run `tests/run_tests_in_isolation` script on your local development
   environment. That's an internal test runner meant to be executed in an
-  isolated environment like `Docker`.<br/>
+  isolated environment like `Docker`.
   Use `./run_tests` script.
 
 ### Running `tmux-test-docker` framework tests
