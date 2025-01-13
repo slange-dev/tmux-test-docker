@@ -13,7 +13,7 @@ register_failing_tests() {
 }
 
 run_test() {
-	local test_file="tests/run_tests_in_isolation"
+	local test_file="/tests/run_tests_in_isolation"
 	echo "Running test suite from: $test_file"
 
     # shellcheck source=/dev/null
