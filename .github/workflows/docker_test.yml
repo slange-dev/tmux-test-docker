@@ -15,5 +15,5 @@ jobs:
         steps:
           - name: Check out the repository
             uses: actions/checkout@master
-          - name: Run the build process
+          - name: Run the build process and execute all test files
             run: docker build . --file Dockerfile --tag tmux-test-docker-debian12-v3.5a:$(date +%s)
