@@ -78,5 +78,8 @@ ENV SHELL=/bin/bash
 # Set user env to root
 ENV USER=root
 
+#
+RUN chmod +x /root/tmux-plugin-test
+
 # Run tests
 RUN /root/tmux-plugin-test/run_tests
