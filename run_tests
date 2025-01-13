@@ -5,6 +5,8 @@
 
 # Run this script when running a test suite.
 
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # global variable for script exit value
 export EXIT_VALUE=0
 
@@ -13,7 +15,7 @@ register_failing_tests() {
 }
 
 run_test() {
-	local test_file="/tests/run_tests_in_isolation"
+	local test_file="$CURRENT_DIR/tests/run_tests_in_isolation"
 	echo "Running test suite from: $test_file"
 
     # shellcheck source=/dev/null
