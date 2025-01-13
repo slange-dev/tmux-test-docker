@@ -1,0 +1,19 @@
+name: Build Tmux from source and run all tests
+on:
+  push:
+    branches: [ "master", "devel" ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "master", " devel" ]
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+    compile_tmux_v35a:
+        name: Compile tmux v3.5a
+        runs-on: ubuntu-latest
+        steps:
+          - name: Check out the repository
+            uses: actions/checkout@master
+          - name: Run the build process
+            run: docker build . --file Dockerfile --tag tmux-test-docker-debian12-v3.5a:$(date +%s)
