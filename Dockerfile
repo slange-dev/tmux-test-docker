@@ -59,7 +59,7 @@ RUN wget -O - https://github.com/tmux/tmux/releases/download/3.5a/tmux-3.5a.tar.
   && rm -rf /var/lib/apt/lists/*
 
 # Copy plugin directory
-COPY ../../ /root/tmux-plugin-test
+COPY . /root/tmux-plugin-test/
 
 # Set language
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
