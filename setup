@@ -58,6 +58,15 @@ symlink_user_test_runner() {
 	fi
 }
 
+symlink_user_dockerfile() {
+	local file="Dockerfile"
+	if ! undo; then
+		cp "lib/tmux-test-docker/${file}" "$file"
+	else
+		restore "$file"
+	fi
+}
+
 create_directory_for_tests() {
 	if ! undo; then
         if [ ! -d "tests/helpers/" ]; then
@@ -69,7 +78,7 @@ create_directory_for_tests() {
 symlink_internal_test_runner() {
 	local file="tests/run_tests_in_isolation"
 	if ! undo; then
-		ln -sf "lib/tmux-test-docker/${file}" "$file"
+		cp "lib/tmux-test-docker/${file}" "$file"
 	else
 		restore "$file"
 	fi
@@ -78,17 +87,17 @@ symlink_internal_test_runner() {
 symlink_test_helpers() {
 	local file="tests/helpers/helpers.sh"
 	if ! undo; then
-		ln -sf "lib/tmux-test-docker/${file}" "$file"
+		cp "lib/tmux-test-docker/${file}" "$file"
 	else
 		restore "$file"
 	fi
 }
 
 main() {
-	add_files_to_gitignore
-    add_module_to_gitmodules
+	#add_files_to_gitignore
+    #add_module_to_gitmodules
 	symlink_user_test_runner
-    symlink_user_test_docker_runner
+    symlink_user_dockerfile
 	create_directory_for_tests
 	symlink_internal_test_runner
 	symlink_test_helpers
